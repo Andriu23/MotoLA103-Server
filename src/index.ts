@@ -1,8 +1,9 @@
 import express from "express";
-import { productosRoutes } from "./routes/product_routes";
-import { contactsRoutes } from "./routes/contact_routes";
-import { clientsRoutes } from "./routes/client_routes";
+import { productosRoutes } from "./routes/products_routes";
+import { contactsRoutes } from "./routes/contacts_routes";
+import { clientsRoutes } from "./routes/clients_routes";
 import cors from "cors";
+import { usersRoutes } from "./routes/users_routes";
 
 const app = express();
 const port = 3000;
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended: true}));
 app.use('/api', productosRoutes);
 app.use('/api', contactsRoutes);
 app.use('/api', clientsRoutes);
+app.use('/api', usersRoutes);
 
 app.listen(port, () => {
     return console.log(`Estoy corriendo en el puerto ${port}`);
