@@ -1,0 +1,36 @@
+{
+    "name": "MotoLA103",
+    "version": "1.0.0",
+    "description": "Este es un proyecto sobre la tiendaOnline API",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "start": "tsc & node lib/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "API",
+        "NodeJS",
+        "Express",
+        "Mongo DB"
+    ],
+    "author": "Andres Satoba",
+    "license": "ISC",
+    "dependencies": {
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.3",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongodb": "^6.19.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.34.0",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/node": "^24.3.0",
+        "eslint": "^9.34.0",
+        "globals": "^16.3.0",
+        "typescript-eslint": "^8.42.0"
+    }
+}
