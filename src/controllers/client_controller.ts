@@ -38,9 +38,11 @@ export const updateCliente = async (req: Request, res: Response): Promise<Respon
 
 export const deleteCliente = async (req: Request, res: Response): Promise<Response> => {
     try {
-        const query = req.query;
+        /*const query = req.query;*/
+        const clientId = req.params.id;
         const collection = await dbConnection('clients');
-        const document = await collection.deleteOne(query);    
+        /*const document = await collection.deleteOne(query);*/
+        const document = await collection.deleteOne({_id : new ObjectId(clientId)});  
         return res.status(200).json(document);
     } catch (error) {
         return res.status(500).json({messge: `Error al eliminar el documento ${error}`});

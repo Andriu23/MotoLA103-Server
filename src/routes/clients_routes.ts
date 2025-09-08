@@ -6,7 +6,7 @@ const clientsRoutes = Router();
 clientsRoutes.post('/clients', crearCliente);
 clientsRoutes.get('/clients', getClientes);
 clientsRoutes.put('/clients', updateCliente);
-clientsRoutes.delete('/clients', deleteCliente);
+clientsRoutes.delete('/clients/:id', deleteCliente);
 clientsRoutes.get('/clients/:id', getClienteById);
 
 export {clientsRoutes};
