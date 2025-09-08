@@ -5,7 +5,7 @@ export const crearUsuario = async (req: Request, res: Response): Promise<Respons
     try {
         const data = req.body;
         const collection = await dbConnection('users');
-        const document = await collection.insertOne(data);    
+        const document = await collection.insertOne(data);
         return res.status(200).json(document);
     } catch (error) {
         return res.status(500).json({messge: `Error al insertar el documento ${error}`});
@@ -14,7 +14,7 @@ export const crearUsuario = async (req: Request, res: Response): Promise<Respons
 
 export const getUsuarios = async (req: Request, res: Response): Promise<Response> => {
     try {
-        const query = req.query;
+        const query = req.body;
         const collection = await dbConnection('users');
         const filteredDocs = await collection.find(query).toArray();    
         return res.status(200).json(filteredDocs);
