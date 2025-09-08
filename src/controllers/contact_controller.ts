@@ -38,9 +38,11 @@ export const updateContact = async (req: Request, res: Response): Promise<Respon
 
 export const deleteContact = async (req: Request, res: Response): Promise<Response> => {
     try {
-        const query = req.query;
+        /*const query = req.query;*/
+        const contactId = req.params.id;
         const collection = await dbConnection('contacts');
-        const document = await collection.deleteOne(query);    
+        /*const document = await collection.deleteOne(query);*/
+        const document = await collection.deleteOne({_id : new ObjectId(contactId)});          
         return res.status(200).json(document);
     } catch (error) {
         return res.status(500).json({messge: `Error al eliminar el documento ${error}`});
