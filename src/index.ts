@@ -20,7 +20,10 @@ app.use('/api', productosRoutes);
 app.use('/api', contactsRoutes);
 app.use('/api', clientsRoutes);
 app.use('/api', usersRoutes);
+app.get('/', (req, res) => {
+    res.send(process.env.CLAVE_JWT);
+})
 
 app.listen(port, () => {
-    return console.log(`Estoy corriendo en el puerto ${port}`);
+    console.log(`Estoy corriendo en el puerto ${port}`);
 });
