@@ -4,6 +4,7 @@ import { contactsRoutes } from "./routes/contacts_routes";
 import { clientsRoutes } from "./routes/clients_routes";
 import cors from "cors";
 import { usersRoutes } from "./routes/users_routes";
+import 'dotenv/config';
 
 const app = express();
 const port = 3000;
