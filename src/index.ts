@@ -26,5 +26,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Estoy corriendo en el puerto ${port}`);
+    return console.log(`Estoy corriendo en el puerto ${port}`);
 });
